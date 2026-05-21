@@ -159,10 +159,10 @@
     
     <button onclick="calculateAttendance()">Calculate</button>
     
-    <p class="fun-message">I Know It's Fun To Bunk And All, But Make Sure You Meet The Attendance Criteria :)</p>
+    <p class="fun-message">I Know It's Fun To Skip And All, But Make Sure You Meet The Attendance Criteria :)</p>
     
     <p id="result"></p>
-    <p id="bunk"></p>
+    <p id="skip"></p>
     <p id="attendMore"></p>
 
     <script>
@@ -186,7 +186,7 @@
             let criteria = document.getElementById('attendanceCriteria').value / 100;
 
             document.getElementById('result').style.display = 'none';
-            document.getElementById('bunk').style.display = 'none';
+            document.getElementById('skip').style.display = 'none';
             document.getElementById('attendMore').style.display = 'none';
 
             if (total > 0 && attended >= 0 && criteria > 0 && criteria <= 1) {
@@ -206,9 +206,9 @@
                     document.getElementById('attendMore').innerText = "You Need To Attend " + additionalClassesNeeded + " More Classes To Reach " + (criteria * 100) + "% In A Total Of " + newTotalClasses + " Classes.";
                     document.getElementById('attendMore').style.display = 'block';
                 } else {
-                    let maxBunks = Math.floor((attended / criteria) - total);
-                    document.getElementById('bunk').innerText = "You Can Bunk " + maxBunks + " More Classes And Still Maintain " + (criteria * 100) + "% Attendance.";
-                    document.getElementById('bunk').style.display = 'block';
+                    let maxSkips = Math.floor((attended / criteria) - total);
+                    document.getElementById('skip').innerText = "You Can Skip " + maxSkips + " More Classes And Still Maintain " + (criteria * 100) + "% Attendance.";
+                    document.getElementById('skip').style.display = 'block';
                 }
             } else {
                 document.getElementById('result').innerText = "Enter Valid Numbers!";
